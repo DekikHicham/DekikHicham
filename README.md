@@ -1,10 +1,29 @@
-- 👋 Hi, I’m @DekikHicham
-- 👀 I’m interested in coding and designs
-- 🌱 I’m currently learning front-end 
-- 💞️ I’m looking to collaborate on small or great projects
-- 📫 How to reach me instgram: @im.darix
+# Landing Page Conversion Analyzer
 
-<!---
-DekikHicham/DekikHicham is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+A lightweight website that lets you analyze a landing page from either:
+
+- A **URL** (auto-fetches readable page text when possible), or
+- An **image/screenshot** (plus optional notes)
+
+It produces:
+
+- Conversion score (`0-100`)
+- Framework analysis (value prop, audience clarity, offer)
+- Funnel evaluation (CTA, trust, objections)
+- Why it may convert
+- What to add
+- What to remove
+- Top-priority CRO actions
+
+## Run locally
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Notes
+
+- URL fetching uses a read-only text proxy and may fail for some pages.
+- For best output, paste key page copy (headline, CTA text, offer, proof elements).
