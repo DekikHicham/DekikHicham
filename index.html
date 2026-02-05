@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page Conversion Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">CRO Assistant</p>
+        <h1>Landing Page Conversion Analyzer</h1>
+        <p>
+          Paste a page URL or upload a screenshot. Get a quick conversion score,
+          funnel breakdown, framework analysis, and practical ideas to improve
+          performance.
+        </p>
+      </header>
+
+      <section class="input-panel">
+        <h2>1) Provide the landing page source</h2>
+
+        <div class="tabs" role="tablist" aria-label="Input type tabs">
+          <button class="tab active" data-tab="url" role="tab" aria-selected="true">Analyze URL</button>
+          <button class="tab" data-tab="image" role="tab" aria-selected="false">Analyze image</button>
+        </div>
+
+        <div class="tab-content active" id="url-content">
+          <label for="urlInput">Landing page URL</label>
+          <div class="inline-row">
+            <input id="urlInput" type="url" placeholder="https://example.com/landing" />
+            <button id="fetchUrlBtn" class="btn">Fetch page text</button>
+          </div>
+          <small>
+            We try to fetch text automatically. If blocked, paste the most important
+            headline + CTA + offer details below.
+          </small>
+          <label for="manualText">Page text / notes</label>
+          <textarea id="manualText" rows="7" placeholder="Paste page copy, headlines, offer, CTA labels, testimonials, etc..."></textarea>
+        </div>
+
+        <div class="tab-content" id="image-content">
+          <label for="imageInput">Upload landing page screenshot</label>
+          <input id="imageInput" type="file" accept="image/*" />
+          <div id="imagePreviewWrap" class="image-preview hidden">
+            <img id="imagePreview" alt="Landing page preview" />
+          </div>
+          <label for="imageNotes">Optional: image context</label>
+          <textarea id="imageNotes" rows="5" placeholder="Describe what is visible: hero message, CTA text, sections, social proof, pricing, etc."></textarea>
+        </div>
+
+        <button id="analyzeBtn" class="btn primary">2) Analyze conversion potential</button>
+      </section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <h2>Analysis results</h2>
+
+        <div class="score-card">
+          <p class="score-label">Conversion score</p>
+          <p id="scoreValue" class="score-value">--</p>
+          <p id="scoreBand" class="score-band">Waiting for analysis</p>
+        </div>
+
+        <div class="grid">
+          <article>
+            <h3>Framework analysis</h3>
+            <ul id="frameworkList"></ul>
+          </article>
+          <article>
+            <h3>Funnel evaluation</h3>
+            <ul id="funnelList"></ul>
+          </article>
+          <article>
+            <h3>Why it could convert</h3>
+            <ul id="strengthList"></ul>
+          </article>
+          <article>
+            <h3>What to add</h3>
+            <ul id="addList"></ul>
+          </article>
+          <article>
+            <h3>What to remove or reduce</h3>
+            <ul id="removeList"></ul>
+          </article>
+          <article>
+            <h3>Top priority actions</h3>
+            <ol id="priorityList"></ol>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
